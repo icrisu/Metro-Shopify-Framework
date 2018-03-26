@@ -2,7 +2,7 @@
 <P> Starter framework for Shopify apps. Handles app install, Authentication and placing recurring charge. Also a widget builder that shows the store's categories or products in an interactive way.
 
 ### Requirements
-Requires the following software to be installed: Node.js (4.8 +), PM2, MongoDB.
+Requires the following software to be installed: Node.js (8.9 +), PM2, MongoDB.
 
 ### Configuration
 Find and edit config files under ./server-src/config. Also edit Slack webhook under ./server-src/services/notifications/slack
