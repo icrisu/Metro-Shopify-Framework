@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error page</title>
+    <style type="text/css">
+    	.display-ui {
+    		width: 500px;
+    		max-width: 500px;
+    		margin: auto;
+    		margin-top: 30px;
+    		color: #dc9004;
+    		background: #F2F2F2;
+    		padding: 20px;
+    	}
+    	.err-title {
+    		color: #616161;
+    	}
+    </style>
+  </head>
+  <body>
+  	<div class="display-ui">
+  		<h3 class="err-title">Something went wrong</h3>
+		<p><%= message %></p>
+		<p><%= error.status %></p>
+		<pre><%= error.stack %></pre>  		
+  	</div>
+  </body>
+</html>

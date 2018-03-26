@@ -1,0 +1,161 @@
+
+.gallery-ui-list-item {
+    background: #ffffff;
+    border-radius: 3px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+    width: 200px; height: 220px;
+    overflow: hidden;
+    &.card-new {
+        text-align: center;
+        .plus {
+            display: inline-block;
+            margin-top: 58px;
+        }
+    }
+    .card-info {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        padding: 0px 5px;
+        display: block;
+    }
+    &.card-gallery {
+        position: relative;
+        .remove-card {
+            position: absolute;
+            top: 3px; right: 3px;
+        }
+        .clone-card {
+            position: absolute;
+            top: 3px; left: 3px;
+        }        
+        .remove-card-icon {
+            color: rgb(150, 150, 150) !important;
+        }
+    }
+}
+
+.sections {
+    margin-top: 20px;
+    &.single-section {
+        border-top-style: solid;
+        border-width: 1px;
+        border-color: #eaeaea;
+        padding: 25px 0px;   
+    }
+    .section-container {
+        .section-header {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #eaeaea;
+        }
+        .section-content-ui {
+            &.section-content-ui-single {
+                border: none;
+            }
+            border-style: solid;
+            border-top-style: none;
+            border-width: 1px;
+            border-color: #eaeaea;
+            background: #FFFFFF;
+
+            .s-line {
+                margin-top: 70px;
+                margin-bottom: 30px;
+            }
+
+            .sortable-section-item {
+                width: 150px; height: 150px; background-color: #F2F2F2;
+                float: left; margin-right: 15px; margin-bottom: 15px;
+                border-radius: 5px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                position: relative;
+            }
+            .section-item-inside {
+                position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+                background: rgba(255, 255, 255, .9);
+                transition: all 0.2s ease-in;
+                opacity: 0;
+                
+                .left-top-btn {
+                    position: absolute; left: 3px; top: 3px;
+                }
+                .right-top-btn {
+                    position: absolute; right: 3px; top: 3px;
+                }
+            }
+            .sortable-section-item:hover .section-item-inside {
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+.shortcode-display {
+    padding: 10px;
+    background: #F2F2F2;
+    margin-bottom: 20px;
+    resize: none;
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    border: none;
+    outline: none;
+    padding: 8px;
+    padding-top: 10px;
+    overflow: hidden;
+    overflow-y: auto;   
+}
+
+.card-subtitle {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.custom-css-display {
+    width: 100%;
+    height: 200px !important;
+    border-color: #CCCCCC;
+    outline: none;    
+}
+
+.video-tutorials {
+    .video-tutorial-link {
+        display: block;
+        margin: 10px 0px;
+    }
+}
+
+.welcome-start-info {
+    float: left;
+    padding-top: 50px;
+    padding-left: 20px;    
+    img {
+        max-width: 150px;
+    }
+    p {
+        font-family: 'Bilbo', cursive;
+        margin-left: 26px;
+        margin-top: 26px;
+        color: #8d8d8d;
+        font-size: 33px;
+        background-color: #FFF;
+        padding: 18px 33px;
+        border-radius: 4px;     
+    }
+    .tutorial-button {
+        text-align: center;
+        margin-top: 20px;
+        a {
+            span {
+                margin-right: 7px;
+                vertical-align: middle;
+            }
+        }        
+    }
+}

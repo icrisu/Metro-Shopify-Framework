@@ -1,0 +1,120 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Source+Sans+Pro:300,400);.metro {
+  position: relative;
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  /* start commented backslash hack \*/
+  /* close commented backslash hack */ }
+  .metro .metro-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px; }
+    .metro .metro-menu li {
+      margin: 5px 5px;
+      display: inline-block; }
+      .metro .metro-menu li .menu-btn {
+        display: block;
+        padding: 5px 20px;
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+        color: #000000; }
+  .metro .metro-grid {
+    position: relative; }
+    .metro .metro-grid .metro-grid-item {
+      display: none; }
+      @media screen and (max-width: 750px) {
+        .metro .metro-grid .metro-grid-item {
+          width: 50% !important; } }
+      @media screen and (max-width: 500px) {
+        .metro .metro-grid .metro-grid-item {
+          width: 100% !important; } }
+      .metro .metro-grid .metro-grid-item .metro-item-inside {
+        opacity: 0;
+        position: relative;
+        overflow: hidden; }
+        .metro .metro-grid .metro-grid-item .metro-item-inside .img-inner {
+          z-index: 100; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .img-inner img {
+            width: 100%;
+            display: block; }
+        .metro .metro-grid .metro-grid-item .metro-item-inside .video-metro {
+          z-index: 101;
+          position: absolute;
+          min-width: 100%;
+          min-height: 100%;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+        .metro .metro-grid .metro-grid-item .metro-item-inside .metro-overlay {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 102; }
+        .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines {
+          z-index: 103;
+          position: absolute; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines .metro-headline {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Open Sans Condensed', sans-serif; }
+            @media screen and (max-width: 560px) {
+              .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines .metro-headline {
+                font-size: 24px !important; } }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines .metro-info {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+            font-size: 18px; }
+            @media screen and (max-width: 560px) {
+              .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines .metro-info {
+                font-size: 18px !important; } }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.top_left {
+            left: 15px;
+            top: 15px; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.top_right {
+            right: 15px;
+            top: 15px;
+            text-align: right; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.top_center {
+            top: 15px;
+            width: 100%;
+            text-align: center;
+            padding: 10px 5px; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.bottom_left {
+            left: 5px;
+            bottom: 5px; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.bottom_right {
+            right: 15px;
+            bottom: 15px;
+            text-align: right; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.bottom_center {
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            padding: 10px 5px; }
+          .metro .metro-grid .metro-grid-item .metro-item-inside .metro-headlines.center_center {
+            width: 100%;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%); }
+  .metro .metroclear:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+  .metro .metroclear {
+    display: inline-block; }
+  .metro * html .metroclear {
+    height: 1%; }
+  .metro .metroclear {
+    display: block; }

@@ -1,0 +1,46 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sudo NODE_ENV=dev DEBUG=blocks:* nodemon ./bin/server.js",
+    "staging": "STAGING=yes NODE_ENV=dev DEBUG=blocks:* node ./bin/server.js",
+    "watch": "babel ../server-src --ignore node_modules -w -d ../server --presets es2015,stage-2",
+    "build": "babel ../server-src --ignore node_modules -d ../server --presets es2015,stage-2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.118.0",
+    "bluebird": "^3.5.0",
+    "body-parser": "~1.17.1",
+    "compression": "^1.7.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.6.8",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "express-session": "^1.15.5",
+    "jsonwebtoken": "^8.0.1",
+    "letsencrypt-express": "^2.0.6",
+    "lodash": "^4.17.4",
+    "lunr": "^2.1.3",
+    "moment": "^2.19.1",
+    "mongoose": "^4.11.11",
+    "morgan": "~1.8.1",
+    "query-string": "^5.0.0",
+    "serve-favicon": "~2.4.2",
+    "shopify-node-api": "^1.8.0",
+    "shortid": "^2.2.8",
+    "slack-node": "^0.1.8",
+    "snappyjs": "^0.6.0",
+    "undefsafe": "^2.0.1",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "faker": "^4.1.0",
+    "glob": "^7.1.2"
+  }
+}

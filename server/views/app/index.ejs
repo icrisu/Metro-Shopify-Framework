@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>eBlocks</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bilbo|Open+Sans|Open+Sans+Condensed:300,700|Source+Sans+Pro:300,400" rel="stylesheet">
+        <link rel='stylesheet' href='/assets/styles/font-icons/style.css' />
+        <link rel='stylesheet' href='/assets/styles/style.css' />
+
+        <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/1.6.0/polaris.min.css" />
+
+        <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+        <script>
+
+            // var eBlocksSettings = {};
+            // eBlocksSettings.signature = window.location.search;
+            window.blocksSettings = {
+                lang: '<%= lang %>',
+                apiRoot: '<%= app_host %>',
+                signature: window.location.search
+            }
+
+            if ('<%= stopRedirect %>' !== 'true') {
+                ShopifyApp.init({ 
+                    apiKey: '<%= apiKey %>',
+                    shopOrigin: '<%= shopOrigin %>',
+                    debug: false,
+                    forceRedirect: true,
+                });            
+
+                ShopifyApp.ready(function(){
+                    try {
+                        ShopifyApp.Bar.loadingOff();
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                    ShopifyApp.Bar.initialize({
+                        icon: '<%= app_host %>' + '/assets/img/icon.png',                    
+                        // buttons: {
+                        //     primary: {
+                        //     label: 'Preview',
+                        //     message: 'preview',
+                        //     href: '#',
+                        //     target: '_blank',
+                        //     callback: function() {
+                        //             //ShopifyApp.Bar.loadingOn();
+                        //             // console.log('preview here');
+                        //         }
+                        //     }                       
+                        // }                                   
+                    });                    
+                });
+            }
+
+        </script>
+    
+
+    </head>
+
+    <body> 
+        <div id="container"></div>
+        <script type="text/javascript" src="/assets/index.js"></script>        
+    </body>
+</html>

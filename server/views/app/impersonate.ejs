@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>eBlocks</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <p id="msg"></p>
+    </body>
+    <script>
+        var search = location.search.substring(1);
+        if (window.location.search === '') {
+            document.getElementById("msg").innerHTML = 'You don\'t have a valid token';
+        } else {
+            var parsed = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+            if (parsed.token) {
+                localStorage.setItem("x_imp", parsed.token);
+                document.getElementById("msg").innerHTML = 'OK, you are someone else';
+            } else {
+                document.getElementById("msg").innerHTML = 'You don\'t have a valid token';
+            }
+        }
+    </script>    
+</html>

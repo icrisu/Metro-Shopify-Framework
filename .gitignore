@@ -1,0 +1,11 @@
+storefront/node_modules
+front/node_modules
+server/node_modules
+server/bin/server-prod.js
+server-src/node_modules
+npm-debug.log
+front/package-lock.json
+server-src/package-lock.json
+package-lock.json
+sftp-config.json
+server-src/yarn.lock

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>eBlocks</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel='stylesheet' href='/assets/styles/style.css' />
+
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+        <script>
+
+            // var eBlocksSettings = {};
+            // eBlocksSettings.signature = window.location.search;
+            window.blocksSettings = {
+                lang: '<%= lang %>',
+                apiRoot: '<%= app_host %>',
+                signature: window.location.search
+            }
+
+            if ('<%= stopRedirect %>' !== 'true') {
+                ShopifyApp.init({ 
+                    apiKey: '<%= apiKey %>',
+                    shopOrigin: '<%= shopOrigin %>',
+                    debug: false,
+                    forceRedirect: true,
+                });            
+
+                ShopifyApp.ready(function(){
+                    try {
+                        ShopifyApp.Bar.loadingOff();
+                    } catch (e) {
+                        console.log(e);
+                    }
+                    ShopifyApp.Bar.initialize({
+                        icon: '<%= app_host %>' + '/assets/img/test.png',                    
+                        buttons: {
+                            primary: {
+                            label: 'Activate charge',
+                            message: 'activate',
+                            href: '<%= app_host %>/auth/charge-request' + window.blocksSettings.signature,
+                            target: '_blank',
+                            callback: function() {
+                                    //ShopifyApp.Bar.loadingOn();
+                                    // console.log('preview here');
+                                }
+                            }                       
+                        }                                   
+                    });                    
+                });
+            }
+
+        </script>
+
+        <style type="text/css">
+            .welcome-message {
+                color: #8386bf;
+                font-family: Helvetica, Sans-Serif;
+                font-weight: 300;
+                font-size: 22px;
+                text-align: center;
+                margin: 10px;
+            }
+            .top_space {
+                margin-top: 80px;
+            }            
+            body {
+                background: #FFFFFF;
+            }
+            .btn-ui {
+                text-align: center;
+                margin-top: 40px;
+            }
+            .paybuttonapollo:link {
+                font-family: Helvetica, Sans-Serif;
+                text-decoration: none;
+                padding: 10px 20px;
+                color: #8386bf;
+                border-style: solid; border-width: 1px;
+                outline: none;
+                display: inline-block;
+                font-size: 30px;
+                font-weight: 300;
+            }
+            .paybuttonapollo:visited {
+                color: #8386bf;
+            }
+            .paybuttonapollo:hover {
+                color: #8386bf;
+                background-color: #F2F2F2;
+            }
+            .paybuttonapollo:active {
+                color: #8386bf;
+            }            
+        </style>         
+    
+
+    </head>
+
+    <body> 
+        <p class="welcome-message top_space">In order to use the app you have to activate the payment.</p>
+        <p class="welcome-message">You have <%= trial_days %> days free trial.</p>
+        <div class="btn-ui"><a id="paymentBtn" class="paybuttonapollo" target="_blank" href="<%= app_host %>/auth/charge-request">Activate payment</a></div>
+
+        <script type="text/javascript">
+            jQuery('#paymentBtn').attr('href', jQuery('#paymentBtn').attr('href') + window.blocksSettings.signature);
+        </script>
+    </body>
+</html>
